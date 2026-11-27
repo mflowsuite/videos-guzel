@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guzel · Guía de filmación para la web nueva</title>
+<meta name="description" content="Qué videos necesita la web nueva de Guzel, cómo filmarlos y por qué.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Guzel · Guía de filmación para la web nueva">
+<meta property="og:description" content="Qué tomas necesitamos, cómo filmarlas y por qué.">
+<meta property="og:image" content="https://mflowsuite.github.io/videos-guzel/img/og.jpg">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Quicksand:wght@400;500;600;700&family=Fira+Sans:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1f1f1f; --ash: #474747; --cream: #f7f2e9; --paper: #fffdf9;
+    --teal: #8acdc1; --teal-deep: #1f6f63; --pink: #ffcefb; --butter: #fdeaa8;
+    --line: #e6dfd2;
+    --display: 'Fraunces', Georgia, serif; --sans: 'Quicksand', system-ui, sans-serif;
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    color-scheme: light;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 500 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+  img, video { display: block; max-width: 100%; }
+  a { color: var(--teal-deep); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.12; margin: 0; letter-spacing: -.01em; }
+  h2 { font-size: clamp(2rem, 4.2vw, 3rem); max-width: 20ch; }
+  h3 { font-size: 1.3rem; }
+  p { margin: 0; }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+  .kicker { font-size: .78rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal-deep); }
+  .rule { width: 56px; height: 4px; border-radius: 4px; background: var(--teal); margin: 18px 0 22px; }
+  section { padding: clamp(64px, 10vw, 112px) 0; }
+  .lead { font-size: clamp(1.05rem, 1.6vw, 1.2rem); color: var(--ash); max-width: 62ch; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 24px; border-radius: 999px; background: var(--teal-deep); color: #fff; font-weight: 700; text-decoration: none; transition: transform .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+  .btn.ghost { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.5); backdrop-filter: blur(6px); }
+  @media (hover: hover) and (pointer: fine) { .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -10px rgba(31,111,99,.6); } }
+
+  /* Hero */
+  .hero { position: relative; min-height: 92svh; display: grid; align-items: end; color: #fff; overflow: hidden; padding: 0; background: #141414; }
+  .hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20,20,20,.66) 0%, rgba(20,20,20,.28) 55%, rgba(20,20,20,0) 100%), linear-gradient(180deg, rgba(20,20,20,.35) 0%, rgba(20,20,20,0) 30%, rgba(20,20,20,.6) 100%); }
+  .hero .top { position: absolute; top: 0; left: 0; right: 0; z-index: 2; padding: 22px 0; }
+  .hero .top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  .hero .logo { width: 120px; filter: brightness(0) invert(1); }
+  .hero .tag { font-size: .8rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; opacity: .9; text-align: right; }
+  .hero .content { position: relative; z-index: 2; padding-bottom: clamp(48px, 9vh, 96px); }
+  .hero h1 { font-size: clamp(2.6rem, 7vw, 5.2rem); max-width: 13ch; }
+  .hero h1 em { font-style: italic; color: var(--butter); }
+  .hero p { margin: 20px 0 30px; font-size: clamp(1.05rem, 1.8vw, 1.3rem); max-width: 46ch; opacity: .95; }
+  .hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+
+  /* Datos de uso */
+  .facts { margin-top: 44px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .fact { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px; }
+  .fact b { display: block; font-family: var(--display); font-weight: 400; font-size: 2.6rem; line-height: 1; color: var(--teal-deep); }
+  .fact span { display: block; margin-top: 10px; color: var(--ash); font-size: .98rem; }
+  .where { margin-top: 28px; padding: 16px 20px; border-left: 4px solid var(--teal); background: #fff; border-radius: 0 12px 12px 0; color: var(--ash); max-width: 78ch; }
+  .where b { color: var(--ink); }
+
+  /* Hoy: el reel vertical y la franja que usa la compu */
+  .hoy { background: var(--cream); }
+  .hoy-grid { margin-top: 44px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+  .crop { display: grid; grid-template-columns: minmax(0, 9fr) auto minmax(0, 16fr); gap: 14px; align-items: center; }
+  .crop figure { margin: 0; }
+  .crop figcaption { margin-top: 10px; font-size: .82rem; font-weight: 700; color: var(--ash); text-align: center; }
+  .frame { position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 50px -30px rgba(0,0,0,.5); background: #ddd; }
+  .frame img { width: 100%; height: auto; }
+  .frame.v::before, .frame.v::after { content: ''; position: absolute; left: 0; right: 0; background: rgba(20,20,20,.62); }
+  .frame.v::before { top: 0; height: 14.5%; }
+  .frame.v::after { top: 46.1%; bottom: 0; }
+  .band { position: absolute; left: 0; right: 0; top: 14.5%; height: 31.6%; border: 3px solid var(--butter); border-radius: 4px; z-index: 1; }
+  .crop .arrow { font-size: 1.8rem; color: var(--teal-deep); }
+  .limits { margin: 0; padding: 0; list-style: none; display: grid; gap: 16px; }
+  .limits li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; color: var(--ash); }
+  .limits li::before { content: '!'; width: 34px; height: 34px; border-radius: 50%; background: var(--pink); color: var(--ink); display: grid; place-items: center; font-weight: 700; }
+  .limits b { color: var(--ink); display: block; }
+
+  /* Cómo filmar */
+  .rules { margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; counter-reset: r; }
+  .rulec { counter-increment: r; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 24px 24px 24px 76px; position: relative; }
+  .rulec::before { content: counter(r); position: absolute; left: 22px; top: 22px; width: 38px; height: 38px; border-radius: 50%; background: var(--teal); color: var(--ink); display: grid; place-items: center; font-weight: 700; }
+  .rulec p { margin-top: 8px; color: var(--ash); }
+  .rulec p b { color: var(--teal-deep); }
+
+  /* Encuadre */
+  .encuadre { background: #141414; color: #fff; }
+  .encuadre .kicker { color: var(--teal); }
+  .encuadre .lead { color: rgba(255,255,255,.78); }
+  .enc-grid { margin-top: 44px; display: grid; grid-template-columns: minmax(0, 16fr) minmax(0, 6.2fr); gap: clamp(20px, 4vw, 48px); align-items: end; }
+  .enc figure { margin: 0; }
+  .enc figcaption { margin-top: 12px; font-size: .9rem; color: rgba(255,255,255,.7); }
+  .enc figcaption b { color: #fff; }
+  .enc .frame { border-radius: 18px; }
+  .zone { position: absolute; display: grid; place-items: center; text-align: center; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 8px; border-radius: 10px; }
+  .zone.txt { background: rgba(255,253,249,.9); color: var(--ink); border: 2px dashed var(--teal-deep); }
+  .zone.act { border: 2px solid var(--butter); color: var(--butter); background: rgba(20,20,20,.18); text-shadow: 0 1px 6px rgba(0,0,0,.8); }
+  .h .zone.txt { right: 4%; top: 22%; bottom: 14%; width: 30%; }
+  .h .zone.act { left: 4%; top: 8%; bottom: 8%; width: 58%; }
+  .vv .zone.txt { left: 5%; right: 5%; bottom: 3%; height: 28%; }
+  .vv .zone.act { left: 5%; right: 5%; top: 6%; height: 58%; }
+
+  /* Tomas */
+  .tomas { margin-top: 44px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; counter-reset: t; }
+  .toma { counter-increment: t; background: #fff; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; }
+  .toma .shot { position: relative; aspect-ratio: 16 / 9; background: var(--cream); }
+  .toma .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .toma .shot span { position: absolute; left: 12px; top: 12px; padding: 4px 12px; border-radius: 999px; background: rgba(20,20,20,.7); color: #fff; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+  .toma .shot.nueva { display: grid; place-items: center; background: linear-gradient(135deg, #fbf3fb, var(--cream)); }
+  .toma .shot.nueva b { font-family: var(--display); font-weight: 400; font-style: italic; font-size: 1.6rem; color: var(--teal-deep); }
+  .toma .body { padding: 22px 24px 26px; }
+  .toma h3::before { content: counter(t) '. '; color: var(--teal-deep); }
+  .toma dl { margin: 12px 0 0; display: grid; gap: 10px; }
+  .toma dt { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--teal-deep); }
+  .toma dd { margin: 2px 0 0; color: var(--ash); }
+
+  /* Resumen */
+  .resumen { background: var(--teal-deep); color: #fff; }
+  .resumen .kicker { color: var(--butter); }
+  .resumen .rule { background: var(--butter); }
+  .chips { margin: 28px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+  .chips li { padding: 10px 18px; border-radius: 999px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.3); font-weight: 600; }
+  .resumen .btn { margin-top: 34px; background: #fff; color: var(--teal-deep); }
+
+  /* Footer */
+  footer { background: #141414; color: rgba(255,255,255,.5); padding: 28px 0 24px; text-align: center; font-size: .85rem; }
+  /* MflowSuite badge */
+  #hl-pw-scene { position: relative; display: inline-block; margin-top: .75rem; }
+  #hl-pw-row { display: inline-flex; align-items: center; font-family: 'Fira Sans', sans-serif; font-size: 11px; font-weight: 600; white-space: nowrap; color: rgba(255,255,255,.55); }
+  .hl-pw-by { color: rgba(255,255,255,.3); }
+  #hl-pw-slot { display: inline-block; width: 28px; height: 28px; margin: 0 5px; vertical-align: middle; flex-shrink: 0; }
+  #hl-pw-logo { position: absolute; top: 0; left: 0; width: 28px; height: 28px; border-radius: 50%; object-fit: cover; pointer-events: none; }
+  #hl-pw-chars .pw-ch { display: inline-block; }
+  #hl-pw-logo.pw-glow { filter: drop-shadow(0 0 6px rgba(59,130,246,.9)); }
+  .hl-pw-wrap { text-align: center; padding: 12px 0 4px; }
+
+  /* Reveal */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s var(--ease-out); }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .hero video { display: none; }
+  }
+
+  @media (max-width: 900px) {
+    .facts { grid-template-columns: repeat(2, 1fr); }
+    .hoy-grid, .rules, .tomas { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .hero .tag { font-size: .68rem; }
+    .fact { padding: 18px 16px; }
+    .fact b { font-size: 2.1rem; }
+    .rulec { padding: 70px 20px 22px 20px; }
+    .enc-grid { grid-template-columns: 1fr; }
+    .enc .vv { width: 62%; margin-inline: auto; }
+    .zone { font-size: .66rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img class="poster" src="img/local-d.webp" alt="">
+  <video autoplay muted loop playsinline poster="img/local-d.webp" aria-hidden="true">
+    <source src="img/local-m.mp4" type="video/mp4" media="(max-aspect-ratio: 1/1)">
+    <source src="img/local-d.mp4" type="video/mp4">
+  </video>
+  <div class="top"><div class="wrap">
+    <img class="logo" src="img/logo.png" alt="Guzel" width="120" height="56">
+    <span class="tag">Guía de filmación</span>
+  </div></div>
+  <div class="content wrap">
+    <h1>Los videos de la <em>web nueva</em></h1>
+    <p>Qué tomas necesitamos, cómo filmarlas y por qué. Para que la web se vea como se ve Guzel en el local.</p>
+    <div class="ctas">
+      <a class="btn" href="https://guzel-web.mflowsuite.com" target="_blank" rel="noopener">Ver la web de prueba →</a>
+      <a class="btn ghost" href="#tomas">Ir a las tomas ↓</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="uso">
+  <div class="wrap">
+    <p class="kicker reveal">Cómo usa la web los videos</p>
+    <div class="rule"></div>
+    <h2 class="reveal">La home se recorre como una película</h2>
+    <p class="lead reveal" style="margin-top:18px">Se entra por la ceja del logo y cada escena aparece al deslizar. El video ocupa toda la pantalla y los textos de la web van encima. Por eso el video es lo primero que se ve y lo que más pesa en la impresión.</p>
+    <div class="facts">
+      <div class="fact reveal"><b>6</b><span>escenas: entrada, local, cejas, pestañas, productos y resultado.</span></div>
+      <div class="fact reveal"><b>2</b><span>versiones de cada una: horizontal para compu y vertical para celular.</span></div>
+      <div class="fact reveal"><b>4 a 10</b><span>segundos por escena, en cámara lenta y en loop.</span></div>
+      <div class="fact reveal"><b>0</b><span>sonido, textos o logos en el video. Todo eso lo pone la web.</span></div>
+    </div>
+    <p class="where reveal"><b>Las mismas tomas se usan en más páginas:</b> cada servicio, Quiénes somos y la portada de Home Care. Una buena toma rinde en varios lugares.</p>
+  </div>
+</section>
+
+<section class="hoy" id="hoy">
+  <div class="wrap">
+    <p class="kicker reveal">Por qué hacen falta tomas nuevas</p>
+    <div class="rule"></div>
+    <h2 class="reveal">Hoy todo sale de un solo reel vertical</h2>
+    <p class="lead reveal" style="margin-top:18px">La web de prueba está armada con un reel pensado para Instagram. En celular funciona. En compu, donde la pantalla es horizontal, solo entra una franja de la imagen.</p>
+    <div class="hoy-grid">
+      <div class="crop reveal">
+        <figure>
+          <div class="frame v"><img src="img/cejas-m.webp" alt="Cuadro del reel vertical: peinado de cejas" width="1080" height="1920" loading="lazy"><span class="band"></span></div>
+          <figcaption>El reel completo</figcaption>
+        </figure>
+        <span class="arrow" aria-hidden="true">→</span>
+        <figure>
+          <div class="frame"><img src="img/cejas-d.webp" alt="La franja del reel que se ve en compu, ampliada" width="1920" height="1080" loading="lazy"></div>
+          <figcaption>Lo que queda en compu</figcaption>
+        </figure>
+      </div>
+      <ul class="limits reveal">
+        <li><span><b>En compu se usa menos de un tercio de la imagen.</b>Al ampliar esa franja a pantalla completa se pierde nitidez.</span></li>
+        <li><span><b>Las tomas duran uno o dos segundos.</b>Para armar una escena hay que encadenar varias, y se nota el corte.</span></li>
+        <li><span><b>La cámara lenta no es real.</b>El reel está filmado a velocidad normal y los cuadros intermedios los inventa un programa. No siempre queda natural.</span></li>
+        <li><span><b>Varias tomas no se pueden usar.</b>Tienen letras encima, alguien saluda a cámara, el hilo está fuera de foco o la cara queda justo donde va el texto.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="como">
+  <div class="wrap">
+    <p class="kicker reveal">Cómo filmar</p>
+    <div class="rule"></div>
+    <h2 class="reveal">Ocho pedidos, cada uno con su motivo</h2>
+    <div class="rules">
+      <div class="rulec reveal"><h3>Cada toma en horizontal y en vertical</h3><p>Las dos filmadas, no una recortada de la otra. <b>Por qué:</b> compu y celular tienen cada uno su encuadre, y así ninguno pierde imagen.</p></div>
+      <div class="rulec reveal"><h3>4K, a 50 o 60 cuadros por segundo</h3><p><b>Por qué:</b> la web pasa los videos en cámara lenta. Con esos cuadros la cámara lenta es real y se ve suave.</p></div>
+      <div class="rulec reveal"><h3>Tomas continuas de 10 a 15 segundos</h3><p>Sin cortes adentro. <b>Por qué:</b> de cada toma elijo el mejor tramo y lo dejo en loop, sin saltos.</p></div>
+      <div class="rulec reveal"><h3>Cámara quieta o con movimiento muy suave</h3><p>Trípode o estabilizador. <b>Por qué:</b> un movimiento brusco, repetido en loop y en cámara lenta, marea.</p></div>
+      <div class="rulec reveal"><h3>Sin textos, logos ni música</h3><p><b>Por qué:</b> la web pone sus propios títulos y botones encima, y cualquier letra del video queda cortada o tapada.</p></div>
+      <div class="rulec reveal"><h3>Un tercio del cuadro libre</h3><p>Sin cara ni acción en esa zona. <b>Por qué:</b> ahí va el texto de la web. Más abajo está el dibujo de dónde cae.</p></div>
+      <div class="rulec reveal"><h3>El servicio en foco y nadie mirando a cámara</h3><p><b>Por qué:</b> lo que vende es ver el hilo, la pinza o el producto trabajando. Una cara posando no muestra el servicio.</p></div>
+      <div class="rulec reveal"><h3>Luz pareja, sin parpadeo</h3><p><b>Por qué:</b> el parpadeo de tubos o pantallas casi no se ve a velocidad normal, pero en cámara lenta se nota mucho.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="encuadre" id="encuadre">
+  <div class="wrap">
+    <p class="kicker reveal">El encuadre</p>
+    <div class="rule"></div>
+    <h2 class="reveal">Dónde va la acción y dónde va el texto</h2>
+    <p class="lead reveal" style="margin-top:18px">En compu el texto va a un costado. En celular va abajo. La acción tiene que quedar en el resto del cuadro.</p>
+    <div class="enc-grid enc">
+      <figure class="reveal">
+        <div class="frame h"><img src="img/pestanas-d.webp" alt="Ejemplo de encuadre horizontal" width="1920" height="1080" loading="lazy"><span class="zone act">Acción</span><span class="zone txt">Texto de la web</span></div>
+        <figcaption><b>Horizontal, para compu.</b> La acción en dos tercios del cuadro y un costado libre. Puede ser el izquierdo o el derecho.</figcaption>
+      </figure>
+      <figure class="reveal">
+        <div class="frame vv"><img src="img/pestanas-m.webp" alt="Ejemplo de encuadre vertical" width="1080" height="1920" loading="lazy"><span class="zone act">Acción</span><span class="zone txt">Texto de la web</span></div>
+        <figcaption><b>Vertical, para celular.</b> La acción arriba y el tercio de abajo libre.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="tomas">
+  <div class="wrap">
+    <p class="kicker reveal">Las tomas</p>
+    <div class="rule"></div>
+    <h2 class="reveal">Ocho tomas para toda la web</h2>
+    <p class="lead reveal" style="margin-top:18px">Las seis primeras son las escenas de la home. La imagen muestra cómo se ve hoy cada una. Las dos últimas son nuevas.</p>
+    <div class="tomas">
+      <article class="toma reveal">
+        <div class="shot"><img src="img/entrada-d.webp" alt="Escena actual: entrada al local" loading="lazy"><span>Así se ve hoy</span></div>
+        <div class="body"><h3>Entrada</h3><dl>
+          <div><dt>Qué filmar</dt><dd>Una clienta entrando al local, con la fachada y el logo a la vista.</dd></div>
+          <div><dt>Para qué</dt><dd>Es la primera escena: la web se abre por la ceja del logo y aparece esto.</dd></div>
+        </dl></div>
+      </article>
+      <article class="toma reveal">
+        <div class="shot"><img src="img/local-d.webp" alt="Escena actual: el salón" loading="lazy"><span>Así se ve hoy</span></div>
+        <div class="body"><h3>El local</h3><dl>
+          <div><dt>Qué filmar</dt><dd>El salón en plano general, con gente atendiendo y clientas en los sillones.</dd></div>
+          <div><dt>Para qué</dt><dd>Muestra cómo es venir a Guzel. También va en Quiénes somos.</dd></div>
+        </dl></div>
+      </article>
+      <article class="toma reveal">
+        <div class="shot"><img src="img/cejas-d.webp" alt="Escena actual: cejas" loading="lazy"><span>Así se ve hoy</span></div>
+        <div class="body"><h3>Cejas</h3><dl>
+          <div><dt>Qué filmar</dt><dd>Primer plano del hilo trabajando sobre la ceja, bien en foco. Si se puede, también el peinado.</dd></div>
+          <div><dt>Para qué</dt><dd>Es el servicio principal. Acompaña los precios en la home y la página de cejas.</dd></div>
+        </dl></div>
+      </article>
+      <article class="toma reveal">
+        <div class="shot"><img src="img/pestanas-d.webp" alt="Escena actual: pestañas" loading="lazy"><span>Así se ve hoy</span></div>
+        <div class="body"><h3>Pestañas</h3><dl>
+          <div><dt>Qué filmar</dt><dd>Primer plano del lifting de pestañas en proceso.</dd></div>
+          <div><dt>Para qué</dt><dd>Segunda escena de servicios y portada de la página de pestañas.</dd></div>
+        </dl></div>
+      </article>
+      <article class="toma reveal">
+        <div class="shot"><img src="img/productos-d.webp" alt="Escena actual: productos" loading="lazy"><span>Así se ve hoy</span></div>
+        <div class="body"><h3>Productos</h3><dl>
+          <div><dt>Qué filmar</dt><dd>Los productos RefectoCil en uso en el local, no apoyados en una mesa.</dd></div>
+          <div><dt>Para qué</dt><dd>Presenta la línea que después se compra para la casa.</dd></div>
+        </dl></div>
+      </article>
+      <article class="toma reveal">
+        <div class="shot"><img src="img/resultado-d.webp" alt="Escena actual: resultado" loading="lazy"><span>Así se ve hoy</span></div>
+        <div class="body"><h3>Resultado</h3><dl>
+          <div><dt>Qué filmar</dt><dd>Primeros planos de cejas terminadas, en mujer y en hombre.</dd></div>
+          <div><dt>Para qué</dt><dd>Es el cierre de la película, justo antes de «Encontrá tu sucursal».</dd></div>
+        </dl></div>
+      </article>
+      <article class="toma reveal">
+        <div class="shot nueva"><b>Toma nueva</b></div>
+        <div class="body"><h3>Una por cada servicio</h3><dl>
+          <div><dt>Qué filmar</dt><dd>Una toma de cada servicio principal, con el mismo criterio que cejas y pestañas.</dd></div>
+          <div><dt>Para qué</dt><dd>Hoy varias páginas de servicio comparten el mismo video. Con esto cada una tiene el suyo.</dd></div>
+        </dl></div>
+      </article>
+      <article class="toma reveal">
+        <div class="shot nueva"><b>Toma nueva</b></div>
+        <div class="body"><h3>Home Care en casa</h3><dl>
+          <div><dt>Qué filmar</dt><dd>Alguien usando los productos en su casa: una toma de mañana y otra de noche.</dd></div>
+          <div><dt>Para qué</dt><dd>La página de Home Care muestra la rutina de mañana y de noche, y hoy usa el video del local.</dd></div>
+        </dl></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="resumen" id="resumen">
+  <div class="wrap">
+    <p class="kicker reveal">En resumen</p>
+    <div class="rule"></div>
+    <h2 class="reveal">Lo que tiene que cumplir cada toma</h2>
+    <ul class="chips reveal">
+      <li>Horizontal y vertical</li>
+      <li>4K</li>
+      <li>50 o 60 cuadros por segundo</li>
+      <li>10 a 15 segundos sin cortes</li>
+      <li>Cámara quieta</li>
+      <li>Sin textos ni música</li>
+      <li>Un tercio del cuadro libre</li>
+      <li>El servicio en foco</li>
+      <li>Luz pareja</li>
+    </ul>
+    <a class="btn reveal" href="https://guzel-web.mflowsuite.com" target="_blank" rel="noopener">Ver la web de prueba →</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>Guía de filmación · Web nueva de Guzel</p>
+  <div class="hl-pw-wrap">
+    <a href="https://mflowsuite.com/" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block;">
+      <div id="hl-pw-scene">
+        <div id="hl-pw-row" style="opacity:0;">
+          <span class="hl-pw-by">Powered by&nbsp;</span>
+          <span id="hl-pw-slot"></span>
+          <span id="hl-pw-chars"></span>
+        </div>
+        <img id="hl-pw-logo" src="https://reviews.mflowsuite.com/assets/mflowsuite-logo.png" alt="MflowSuite">
+      </div>
+    </a>
+  </div>
+</footer>
+
+<script>
+  // Aparición suave de cada bloque al entrar en pantalla.
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+setTimeout(function() {
+  var BRAND='MflowSuite', LS=28, HD=290, FHD=680, SQD=480, LSQ=500, ID=650, THR=0.2;
+  var scene=document.getElementById('hl-pw-scene'),
+      row=document.getElementById('hl-pw-row'),
+      charsEl=document.getElementById('hl-pw-chars'),
+      slotEl=document.getElementById('hl-pw-slot'),
+      logo=document.getElementById('hl-pw-logo');
+  if(!scene||!row||!charsEl||!slotEl||!logo) return;
+  var spans=[];
+  for(var i=0;i<BRAND.length;i++){
+    var s=document.createElement('span');
+    s.className='pw-ch'; s.textContent=BRAND[i];
+    s.style.color='rgba(255,255,255,.55)'; s.style.fontWeight='600';
+    charsEl.appendChild(s); spans.push(s);
+  }
+  var lerp=function(a,b,t){return a+(b-a)*t;};
+  var clamp=function(v,a,b){return Math.max(a,Math.min(b,v));};
+  var arc=function(t,h){return 4*h*t*(1-t);};
+  function spring(t){
+    if(t<.15){var r=t/.15; return[lerp(1,1.35,r),lerp(1,.55,r)];}
+    if(t<.40){var r=(t-.15)/.25; return[lerp(1.35,.88,r),lerp(.55,1.22,r)];}
+    if(t<.70){var r=(t-.40)/.30; return[lerp(.88,1.04,r),lerp(1.22,.96,r)];}
+    var r=(t-.70)/.30; return[lerp(1.04,1,r),lerp(.96,1,r)];
+  }
+  function air(t){
+    if(t<.45) return[lerp(1,.84,t/.45),lerp(1,1.2,t/.45)];
+    if(t<.82) return[.84,1.2];
+    var r=(t-.82)/.18; return[lerp(.84,1.28,r),lerp(1.2,.68,r)];
+  }
+  function ctr(el){
+    var er=el.getBoundingClientRect(),sr=scene.getBoundingClientRect();
+    return{x:er.left-sr.left+er.width/2,y:er.top-sr.top+er.height/2};
+  }
+  function mv(cx,cy,sx,sy,rot,a){
+    logo.style.transform='translate('+(cx-LS/2)+'px,'+(cy-LS/2)+'px) rotate('+rot+'rad) scale('+sx+','+sy+')';
+    logo.style.opacity=a;
+  }
+  var phase='intro',t0=null,idx=0,hop=null,done=false;
+  var lpos=[],spos=null;
+  var lsq=spans.map(function(){return{at:-1};});
+  var lsqAt=-1,lsX=1,lsY=1;
+  function uLS(now){
+    for(var i=0;i<spans.length;i++){
+      if(lsq[i].at<0) continue;
+      var t=clamp((now-lsq[i].at)/SQD,0,1),res=spring(t);
+      spans[i].style.transform='scaleX('+res[0]+') scaleY('+res[1]+')';
+      spans[i].style.color=t<.28?'#6fa8ff':'rgba(255,255,255,.55)';
+      if(t>=1){lsq[i].at=-1;spans[i].style.transform='';spans[i].style.color='';}
+    }
+  }
+  function uLogo(now){
+    if(lsqAt<0) return;
+    var t=clamp((now-lsqAt)/LSQ,0,1),res=spring(t);
+    lsX=res[0];lsY=res[1];
+    if(t>=1){lsqAt=-1;lsX=lsY=1;}
+  }
+  function tLogo(now){lsqAt=now;lsX=1.3;lsY=0.62;}
+  function sh(from,to,h,dur,now){hop={from:{x:from.x,y:from.y},to:{x:to.x,y:to.y},h:h,dur:dur,t0:now};}
+  function frame(now){
+    if(!t0) t0=now;
+    uLS(now);uLogo(now);
+    if(phase==='intro'){
+      var t=clamp((now-t0)/ID,0,1);
+      row.style.opacity=t; mv(-200,0,1,1,0,0);
+      if(t>=1){
+        lpos=spans.map(ctr);spos=ctr(slotEl);
+        var li=spans.length-1;
+        phase='hop';idx=li;t0=now;
+        sh({x:lpos[li].x+55,y:spos.y},{x:lpos[li].x,y:spos.y},40,HD,now);
+      }
+    } else if(phase==='hop'){
+      if(hop){
+        var ht=clamp((now-hop.t0)/hop.dur,0,1);
+        var lx=lerp(hop.from.x,hop.to.x,ht);
+        var ly=lerp(hop.from.y,hop.to.y,ht)-arc(ht,hop.h);
+        var rot=(ht<0.5?1:-1)*Math.sin(Math.PI*ht)*0.22;
+        var sh2=lsqAt>=0?[lsX,lsY]:air(ht);
+        mv(lx,ly,sh2[0],sh2[1],rot,1);
+        if(ht>=1){
+          lsq[idx].at=now;tLogo(now);
+          var fx=hop.to.x,fy=hop.to.y;idx--;
+          if(idx>=0){sh({x:fx,y:fy},{x:lpos[idx].x,y:spos.y},40,HD,now);}
+          else{phase='final';t0=now;sh({x:fx,y:fy},{x:spos.x,y:spos.y},70,FHD,now);}
+        }
+      }
+    } else if(phase==='final'){
+      if(hop){
+        var ht=clamp((now-hop.t0)/hop.dur,0,1);
+        var lx=lerp(hop.from.x,hop.to.x,ht);
+        var ly=lerp(hop.from.y,hop.to.y,ht)-arc(ht,hop.h);
+        var rot=(ht<0.5?1:-1)*Math.sin(Math.PI*ht)*0.18;
+        var sh2=lsqAt>=0?[lsX,lsY]:air(ht);
+        mv(lx,ly,sh2[0],sh2[1],rot,1);
+        if(ht>=1){phase='done';tLogo(now);mv(spos.x,spos.y,lsX,lsY,0,1);logo.classList.add('pw-glow');}
+      }
+    } else if(phase==='done'){
+      mv(spos.x,spos.y,lsX,lsY,0,1);
+      if(!done){done=true;return;}
+      return;
+    }
+    requestAnimationFrame(frame);
+  }
+  var started=false;
+  function start(){if(started)return;started=true;row.style.opacity='0';mv(-200,0,1,1,0,0);requestAnimationFrame(frame);}
+  function init(){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){if(e.isIntersecting){start();obs.disconnect();}});
+    },{threshold:THR});
+    obs.observe(scene);
+  }
+  if(logo.complete){init();}else{logo.onload=init;logo.onerror=init;setTimeout(init,400);}
+},100);
+</script>
+</body>
+</html>
